@@ -5,6 +5,10 @@
         <input type="text" class="form-control" [(ngModel)]="searchStatus"><br/>
         <button class="btn btn-default" (click)="onCreateServer()">Create Server</button><br/>
       </div>
+      <hr>
+      <div class="form-group">
+        <h4>Overall Servers Performance: {{ oPerform | async }}</h4>
+      </div>
       <ul class="list-group">
         <li
           class="list-group-item"

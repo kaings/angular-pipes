@@ -35,7 +35,24 @@ export class AppComponent {
       status: 'stable',
       started: new Date(15, 1, 2017)
     }
+    ,
+    {
+      instanceType: 'small',
+      name: 'Testing Server',
+      status: 'critical',
+      started: new Date(15, 1, 2017)
+    }
   ];
+
+
+  oPerform = new Promise(
+    (resolve, reject) => {
+      setTimeout(
+        () => {
+          resolve('stable');
+        }, 2000);
+    }
+  );
 
 
   getStatusClasses(server: {instanceType: string, name: string, status: string, started: Date}) {
