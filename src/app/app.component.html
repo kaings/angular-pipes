@@ -23,6 +23,24 @@
           {{ server.started | date: 'fullDate' | uppercase}}
         </li>
       </ul>
+      <hr>
+      <div class="form-group">
+        <h4>Practice - Additional</h4>
+      </div>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let server of servers | filter: searchStatus: 'status'"
+          [ngClass]="getStatusClasses(server)">
+          <span
+            class="badge">
+            {{ server.status }}
+          </span>
+          <strong>{{ server.name | shorten: 10 }}</strong> |
+          {{ server.instanceType | uppercase | reverse}} |
+          {{ server.started | date: 'fullDate' | uppercase}}
+        </li>
+      </ul>
     </div>
   </div>
 </div>
